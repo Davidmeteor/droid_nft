@@ -9,14 +9,14 @@ import "@openzeppelin/contracts/utils/Strings.sol";
 contract GDroid is ERC721Enumerable, Ownable {
     using Strings for uint256;
 
-    bool public _isSaleActive = false;
-    bool public _revealed = false;
+    bool public _isSaleActive = false; // ready to sale
+    bool public _revealed = false; // blind box
 
     // Constants
-    uint256 public constant MAX_SUPPLY = 10;
+    uint256 public constant MAX_SUPPLY = 10; // total NFT amount
     uint256 public mintPrice = 0.3 ether;
-    uint256 public maxBalance = 1;
-    uint256 public maxMint = 1;
+    uint256 public maxBalance = 1; // 1 NFT for 1 wallet address
+    uint256 public maxMint = 1; // can only get 1 NFT for each Mint
 
     string baseURI;
     string public notRevealedUri;
@@ -24,7 +24,8 @@ contract GDroid is ERC721Enumerable, Ownable {
 
     mapping(uint256 => string) private _tokenURIs;
 
-    constructor(string memory initBaseURI, string memory initNotRevealedUri)
+    // entry point, (Contract Name, Symbol)
+    constructor(string memory initBaseURI, string memory initNotRevealedUri) 
         ERC721("GDroid Robot", "GD")
     {
         setBaseURI(initBaseURI);
@@ -46,8 +47,9 @@ contract GDroid is ERC721Enumerable, Ownable {
             "Not enough ether sent"
         );
         require(tokenQuantity <= maxMint, "Can only mint 1 tokens at a time");
+        // above are the limitation
 
-        _mintGDroid(tokenQuantity);
+        _mintGDroid(tokenQuantity); // core Mint function
     }
 
     function _mintGDroid(uint256 tokenQuantity) internal {
