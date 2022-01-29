@@ -25,4 +25,5 @@ tokenprint smart contract
 * Other guidelines
 
 ### Resource ###
-
+* [Translator](https://eth-converter.com/)
+* [OpenSea testnet](https://testnets.opensea.io/)
