@@ -27,3 +27,4 @@ tokenprint smart contract
 ### Resource ###
 * [Translator](https://eth-converter.com/)
 * [OpenSea testnet](https://testnets.opensea.io/)
+* [IPFS Server](https://www.pinata.cloud/)
