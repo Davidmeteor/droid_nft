@@ -22,7 +22,6 @@ tokenprint smart contract
 
 * Writing tests
 * Code review
-* Other guidelines
 
 ### Resource ###
 * [Translator](https://eth-converter.com/)
